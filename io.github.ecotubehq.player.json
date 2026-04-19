@@ -1,7 +1,7 @@
 {
     "app-id": "io.github.ecotubehq.player",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "48",
+    "runtime-version": "50",
     "sdk": "org.gnome.Sdk",
     "command": "ecotube",
     "finish-args": [
@@ -36,7 +36,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ecotubehq/player",
-                    "tag": "26-03-01",
+                    "tag": "26-04-01.02",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d-]+)$",
@@ -159,64 +159,6 @@
                             ]
                         },
                         {
-                            "name": "jpeg-xl",
-                            "buildsystem": "cmake-ninja",
-                            "config-opts": [
-                                "-DJPEGXL_FORCE_SYSTEM_BROTLI=ON",
-                                "-DJPEGXL_FORCE_SYSTEM_LCMS2=ON",
-                                "-DJPEGXL_FORCE_SYSTEM_HWY=ON",
-                                "-DJPEGXL_ENABLE_PLUGINS=OFF",
-                                "-DJPEGXL_ENABLE_TOOLS=OFF",
-                                "-DJPEGXL_ENABLE_EXAMPLES=OFF",
-                                "-DJPEGXL_ENABLE_MANPAGES=OFF",
-                                "-DJPEGXL_ENABLE_FUZZERS=OFF",
-                                "-DBUILD_TESTING=OFF"
-                            ],
-                            "post-install": [
-                                "rm $FLATPAK_DEST/lib/*.a"
-                            ],
-                            "sources": [
-                                {
-                                    "type": "git",
-                                    "url": "https://github.com/libjxl/libjxl.git",
-                                    "commit": "v0.11.0",
-                                    "x-checker-data": {
-                                        "type": "git",
-                                        "tag-pattern": "^v([\\d.]+)$"
-                                    }
-                                }
-                            ],
-                            "modules": [
-                                {
-                                    "name": "hwy",
-                                    "buildsystem": "cmake-ninja",
-                                    "config-opts": [
-                                        "-DBUILD_SHARED_LIBS=ON",
-                                        "-DHWY_ENABLE_TESTS=OFF",
-                                        "-DHWY_ENABLE_EXAMPLES=OFF",
-                                        "-DHWY_ENABLE_CONTRIB=OFF"
-                                    ],
-                                    "cleanup": [
-                                        "/include",
-                                        "/lib/pkgconfig"
-                                    ],
-                                    "sources": [
-                                        {
-                                            "type": "archive",
-                                            "url": "https://github.com/google/highway/archive/refs/tags/1.2.0.tar.gz",
-                                            "sha256": "7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343",
-                                            "x-checker-data": {
-                                                "type": "anitya",
-                                                "project-id": 205809,
-                                                "stable-only": true,
-                                                "url-template": "https://github.com/google/highway/archive/refs/tags/$version.tar.gz"
-                                            }
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "name": "libopenmpt",
                             "config-opts": [
                                 "--disable-static",
@@ -311,7 +253,8 @@
                             "buildsystem": "cmake-ninja",
                             "config-opts": [
                                 "-DCMAKE_BUILD_TYPE=Release",
-                                "-DBUILD_STATIC=0"
+                                "-DBUILD_STATIC=0",
+                                "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                             ],
                             "cleanup": [
                                 "/bin"
@@ -387,31 +330,12 @@
                                 {
                                     "type": "git",
                                     "url": "https://github.com/haasn/libplacebo.git",
-                                    "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
+                                    "commit": "cee9b076f2c63104ccfd497fa79c39a867293ec4",
                                     "x-checker-data": {
                                         "type": "git",
                                         "tag-pattern": "^v([\\d.]+)$"
                                     },
-                                    "tag": "v7.349.0"
-                                }
-                            ],
-                            "modules": [
-                                {
-                                    "name": "glslang",
-                                    "buildsystem": "cmake-ninja",
-                                    "config-opts": [
-                                        "-DBUILD_SHARED_LIBS=ON"
-                                    ],
-                                    "cleanup": [
-                                        "/bin"
-                                    ],
-                                    "sources": [
-                                        {
-                                            "type": "archive",
-                                            "url": "https://github.com/KhronosGroup/glslang/archive/refs/tags/11.12.0.tar.gz",
-                                            "sha256": "7795a97450fecd9779f3d821858fbc2d1a3bf1dd602617d95b685ccbcabc302f"
-                                        }
-                                    ]
+                                    "tag": "v7.360.1"
                                 }
                             ]
                         }
