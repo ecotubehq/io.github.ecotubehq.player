@@ -36,7 +36,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/ecotubehq/player",
-                    "tag": "26-04-01",
+                    "tag": "26-04-01.01",
                     "x-checker-data": {
                         "type": "git",
                         "tag-pattern": "^([\\d-]+)$",
@@ -329,31 +329,12 @@
                                 {
                                     "type": "git",
                                     "url": "https://github.com/haasn/libplacebo.git",
-                                    "commit": "1fd3c7bde7b943fe8985c893310b5269a09b46c5",
+                                    "commit": "cee9b076f2c63104ccfd497fa79c39a867293ec4",
                                     "x-checker-data": {
                                         "type": "git",
                                         "tag-pattern": "^v([\\d.]+)$"
                                     },
-                                    "tag": "v7.349.0"
-                                }
-                            ],
-                            "modules": [
-                                {
-                                    "name": "glslang",
-                                    "buildsystem": "cmake-ninja",
-                                    "config-opts": [
-                                        "-DBUILD_SHARED_LIBS=ON"
-                                    ],
-                                    "cleanup": [
-                                        "/bin"
-                                    ],
-                                    "sources": [
-                                        {
-                                            "type": "archive",
-                                            "url": "https://github.com/KhronosGroup/glslang/archive/refs/tags/11.12.0.tar.gz",
-                                            "sha256": "7795a97450fecd9779f3d821858fbc2d1a3bf1dd602617d95b685ccbcabc302f"
-                                        }
-                                    ]
+                                    "tag": "v7.360.1"
                                 }
                             ]
                         }
